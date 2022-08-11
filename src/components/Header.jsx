@@ -2,12 +2,27 @@ import React from 'react';
 import Logo from '../img/logo.png'
 import {motion} from "framer-motion";
 
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {app} from "../firebase.config";
+
 import Avatar from '../img/avatar.png'
 import {MdShoppingBasket} from "react-icons/md"; 
 import { Link } from 'react-router-dom';
+import { async } from '@firebase/util';
 
 
 function Header() {
+   const firebaseAuth = getAuth(app);
+   const provider = new GoogleAuthProvider();
+
+   const login = async () => {
+   const response = await signInWithPopup(firebaseAuth,provider)
+   // .then((result)=>{
+      console.log(response);
+
+   // })
+   };
+
   return (
     <header className='fixed z-50 w-screen  p-6 px-16' >
         
@@ -37,9 +52,15 @@ function Header() {
      </div>
      </div>
 
-       <motion.img 
+    <div className='relative'>
+    <motion.img 
        whileTap ={{scale:0.6}}
-        src={Avatar} className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-x1 cursor-pointer" alt="userprofile" />
+        src={Avatar} className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-x1 
+        cursor-pointer" 
+        alt="userprofile"
+        onClick={login}
+        />
+    </div>
      </div>
         </div>
 
