@@ -46,7 +46,7 @@ function Header() {
       });
     };
   return (
-    <header className='fixed z-50 w-screen  p-3 px-4 md:p-6' >
+    <header className='fixed z-50 w-screen  p-3 px-4 md:p-6 md:p-6 bg-primary' >
         
         {/* desktop & tablet */}
         <div className='hidden md:flex w-full h-full items-center justify-between '>
@@ -176,13 +176,17 @@ function Header() {
     
      className='flex flex-col '>
         <li className='text-base text-textColor hover:text-headingColor duration-100 transition-all 
-        ease-in-out cursor-pointer  hover:bg-slate-100 px-3 py-2'>Home</li>
+        ease-in-out cursor-pointer  hover:bg-slate-100 px-3 py-2'
+        onClick={() => setIsMenu(false)} >Home</li>
         <li className='text-base text-textColor hover:text-headingColor duration-100 transition-all 
-        ease-in-out cursor-pointer  hover:bg-slate-100 px-3 py-2'>Menu</li>
+        ease-in-out cursor-pointer  hover:bg-slate-100 px-3 py-2'
+        onClick={() => setIsMenu(false)} >Menu</li>
         <li className='text-base text-textColor hover:text-headingColor duration-100 transition-all 
-        ease-in-out cursor-pointer  hover:bg-slate-100 px-3 py-2'>About us</li>
+        ease-in-out cursor-pointer  hover:bg-slate-100 px-3 py-2'
+        onClick={() => setIsMenu(false)} >About us</li>
         <li className='text-base text-textColor hover:text-headingColor duration-100 transition-all 
-        ease-in-out cursor-pointer  hover:bg-slate-100 px-3 py-2'>service</li>
+        ease-in-out cursor-pointer  hover:bg-slate-100 px-3 py-2'
+        onClick={() => setIsMenu(false)} >service</li>
 
      </ul>
              <p className='m-2 p-2 rounded-md shadow-md flex items-center justify-center bg-gray-200 gap-3 
