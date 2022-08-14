@@ -115,7 +115,7 @@ setIsLoading(false)
       }
       
 
-  }catch (error) {
+  } catch (error) {
     console.log(error);
     setFields(true);
     setMsg("Error while uploading : Try AGain 🙇");
@@ -125,7 +125,7 @@ setIsLoading(false)
       setIsLoading(false);
     }, 4000);
   }
-  // fetchData();
+  fetchData();
 };
 const clearData = () => {
   setTitle("");
@@ -135,14 +135,14 @@ const clearData = () => {
   setCategory("Select Category");
 };
 
-// const fetchData = async () => {
-//   await getAllFoodItems().then((data) => {
-//     dispatch({
-//       type: actionType.SET_FOOD_ITEMS,
-//       foodItems: data,
-//     });
-//   });
-// };
+const fetchData = async () => {
+  await getAllFoodItems().then((data) => {
+    dispatch({
+      type: actionType.SET_FOOD_ITEMS,
+      foodItems: data,
+    });
+  });
+};
 
   return (
     <div className='w-full min-h-screen flex items-center justify-center'>
